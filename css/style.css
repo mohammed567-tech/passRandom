@@ -1,0 +1,18 @@
+body{
+    background-color: #1E5259;
+    color: #fff;
+}
+section{
+    overflow: hidden;
+    word-break: break-all;
+    margin-top: 200px;
+}
+#randpass{
+    background-color: black;
+    color: #fff;
+
+}
+#randpass:hover{
+    background-color: #1E5259;
+    color:#fff
+}
