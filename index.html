@@ -2,58 +2,90 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>passwords</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css" />
-    <link rel="stylesheet" href="css/all.min.css" />
-    <link rel="stylesheet" href="css/style.css" />
+    <title>Text Formatting</title>
+    <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
-      <section class="container mt-5">
     <div class="container">
-      <h1 class="text-center mt-5 color-text">HELLO</h1>
-    </div>
-
-    <div class="row m-auto container mt-5 align-items-center">
-      <div class="container">
-        <div class="col-3">
-          <h3>Random Password :</h3>
+      <div class="textdiv">
+        <label for="textInput">Enter Text Without Numbers:</label>
+        <textarea
+          id="textInput"
+          class="textare"
+          placeholder="Enter text without numbers..."
+          rows="5"
+          cols="40"
+        ></textarea>
+        <div class="message">
+          <div id="messageErr" class="messageErr"></div>
         </div>
-        <div class="col-12">
-          <p class="fs-2 fw-bold" id="pass">password</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- button -->
-    <div class="row container m-auto mt-5">
-      <div class="container bg-ligh">
-        <div class="col-4 bg-dange m-auto mb-5">
-            <label for="length" class="text-capitalize form-label fw-bolder"
-              >add length :
-            </label>
-            <input type="text" class="form-control" id="length" />
-          </div>
-        <div class="col-4 m-auto bg-primar">
+        <br />
+        <div class="btns">
+          <button onclick="processTextWithoutNumbers()" id="processtext">
+            Process Text Without Numbers
+          </button>
+          <button onclick="removeProcessedText('formattedText' , 'textInput')">
+            Remove Processed Text
+          </button>
           <button
-            class="btn btn-outline-dark container text-capitalize fw-bolder"
-            id="randpass"
+            id="copyformattedText"
+            onclick="copyText('formattedText', 'copyformattedText','messageErr')"
           >
-            click to random password
+            Copy Text
           </button>
         </div>
+        <div class="textoutput">
+          <div id="formattedText"></div>
+        </div>
+      </div>
+
+      <hr />
+      <div class="numberformat">
+        <label for="numberInput">Enter Text With Numbers:</label>
+        <textarea
+          id="numberInput"
+          class="textarenum"
+          placeholder="Enter text with numbers..."
+          rows="5"
+          cols="40"
+        ></textarea>
+        <div class="message">
+          <div id="messageErrnumber" class="messageErr"></div>
+        </div>
+        <br />
+        <div class="btn">
+          <button onclick="processTextWithNumbers()" id="processbtn">
+            Process Text With Numbers
+          </button>
+          <button
+            onclick="removeProcessedText('formattedNumberText','numberInput')"
+          >
+            Remove Processed Text
+          </button>
+          <button
+            id="copyformattedNumberText"
+            onclick="copyText('formattedNumberText', 'copyformattedNumberText','messageErrnumber')"
+          >
+            Copy Text
+          </button>
+        </div>
+        <div class="nmberoutput">
+          <div id="formattedNumberText"></div>
+        </div>
       </div>
     </div>
-</section>
-<footer>
-    <div class="row container m-auto mt-5">
-        <div class="col-12 text-center">
-            <p>&copy; Template By : Mohamed Ali </p>
-        </div>
-    </div>
-</footer>
-    <script src="js/jquery-3.6.0.js"></script>
-    <script src="js/script.js"></script>
+
+    <footer class="footer">
+      <div>
+        <p>
+          &copy; 2023 Format Text -
+          <a href="https://github.com/mohammed567-tech" target="_blank"
+            >Mohamed Ali</a
+          >. All Rights Reserved.
+        </p>
+      </div>
+    </footer>
+    <script src="./js/script.js"></script>
   </body>
 </html>
